@@ -1,17 +1,17 @@
-function insert_Row() {
-    //Write your code here
-	 // select the table
-    var table = document.getElementById("sampleTable");
+function createTable() {
+    var rows = parseInt(prompt("Input number of rows"));
+    var columns = parseInt(prompt("Input number of columns"));
+    
+    var table = document.getElementById("myTable");
 
-    // create a new row
-    var row = table.insertRow(0);
+    // Clear existing table content
+    table.innerHTML = '';
 
-    // create two cells
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-
-    // set the text of the cells
-    cell1.textContent = "New Cell1";
-    cell2.textContent = "New Cell2";
-  
+    for (var i = 0; i < rows; i++) {
+        var row = table.insertRow(i);
+        for (var j = 0; j < columns; j++) {
+            var cell = row.insertCell(j);
+            cell.textContent = "Row-" + i + " Column-" + j;
+        }
+    }
 }
